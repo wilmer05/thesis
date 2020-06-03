@@ -2,6 +2,7 @@
 #include<vector>
 #include<stdlib.h>
 #include<random>
+#include"alg.hpp"
 using namespace std;
 
 vector<double> generate_random_uniform_val(int n, double min, double max) {
@@ -40,6 +41,12 @@ int main(int argc, char* argv[]) {
 
     int n = atoi(argv[1]);
     int mode = atoi(argv[2]);
-    vector<double> v = generate_input(n, mode);
+    vector<double> weights = generate_input(n, mode);
+    vector<double> profits = generate_input(n, mode);
+    vector<candidate> r = nemhauser_ullman(weights, profits);
+    cout << "Solutions:\n" << endl;
+    for(int i =0 ; i < r.size(); i++) {
+        cout << "\t" << r[i].weight << " " << r[i].profit << endl;
+    }
     return 0;
 }
