@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<double> &profits) {
     vector<candidate> p;
     p.push_back(candidate(0,0));
@@ -21,16 +20,7 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
         int k = 0, cnt_p = 0, cnt_q = 0;
         vector<candidate> tmp(sz << 1);
         
-        while( cnt_p < p.size() || cnt_q < q.size()) {
-            if(cnt_p >= p.size()) {
-                tmp[k++] = q[cnt_q++];
-                continue;
-            }
-            if(cnt_p >= p.size()) {
-                tmp[k++] = p[cnt_p++];
-                continue;
-            }
-
+        while( cnt_p < p.size() && cnt_q < q.size()) {
             if(p[cnt_p].dominates(q[cnt_q])) {
                 cnt_q++;
                 continue;
@@ -42,15 +32,18 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
             }
             
             if(p[cnt_p].profit < q[cnt_q].profit) {
-                tmp[k++] = p[cnt_p];
-                tmp[k++] = q[cnt_q];
+                tmp[k++] = p[cnt_p++];
             } else {
-                tmp[k++] = q[cnt_q];
-                tmp[k++] = p[cnt_p]; 
+                tmp[k++] = q[cnt_q++];
             }
-        
-            cnt_p++,cnt_q++;
         }
+        for(;cnt_p < p.size(); cnt_p++)
+            if(!k || (k >0 && !tmp[k-1].dominates(p[cnt_p])))
+                tmp[k++] = p[cnt_p];
+
+        for(;cnt_q < q.size(); cnt_q++)
+            if(!k || (k > 0 && !tmp[k-1].dominates(q[cnt_q]))) 
+                tmp[k++] = q[cnt_q];
 
         tmp.resize(k);
         p = tmp; 

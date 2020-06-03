@@ -19,6 +19,6 @@ struct candidate {
     }
 };
 
-vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<double> &profits);
+vector<candidate> nemhauser_ullman(const vector<double> &, const vector<double> &);
 
 #endif
