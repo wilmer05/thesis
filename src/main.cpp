@@ -1,20 +1,10 @@
 #include<iostream>
 #include<vector>
 #include<stdlib.h>
-#include"experiment.hpp"
+#include"experiments.hpp"
 
 using namespace std;
 
-void run_experiments(int mode, int n_rounds, int n_experiments) {
-
-    cout << "Starting experiments\nN\t|\tNumber of pareto optimal solutions\n";
-    for(int i=1 ; i < n_experiments + 1; i++) {
-        double n_pareto_optimal_solutions = 
-                    experiment(i, mode, n_rounds);
-
-        cout << i << "\t|\t " << n_pareto_optimal_solutions << endl;
-    }
-}
 
 int main(int argc, char* argv[]) {
 
