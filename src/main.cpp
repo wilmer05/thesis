@@ -8,8 +8,8 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 
-    if(argc < 4) {
-        cout << "Usage: \n\t./run <mode> <n_rounds> <n_experiments>\n\n\t" << 
+    if(argc < 5) {
+        cout << "Usage: \n\t./run <mode> <n_rounds> <n_start> <n_experiments>\n\n\t" << 
                 "modes\n\t\t1 : uniform distribution in [0,1]" <<
                 "\n\t\t2 : uniform distribution in [-1,1]" << endl;
         return 1;
@@ -17,7 +17,8 @@ int main(int argc, char* argv[]) {
 
     int mode = atoi(argv[1]);
     int n_rounds = atoi(argv[2]);
-    int n_experiments = atoi(argv[3]);
-    run_experiments(mode, n_rounds, n_experiments);
+    int n_start = atoi(argv[3]);
+    int n_experiments = atoi(argv[4]);
+    run_experiments(mode, n_rounds, n_start, n_experiments);
     return 0;
 }

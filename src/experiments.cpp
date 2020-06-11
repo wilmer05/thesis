@@ -29,10 +29,12 @@ double experiment(int n_items, int mode, int n_rounds) {
     return mean;
 }
 
-void run_experiments(int mode, int n_rounds, int n_experiments) {
+void run_experiments(int mode, int n_rounds, int n_start, int n_experiments) {
 
-    cout << "Starting experiments\nN\t|\tNumber of pareto optimal solutions\n";
-    for(int i=1 ; i < n_experiments + 1; i++) {
+    if(n_start == 1)
+        cout << "Starting experiments\nN\t|\tNumber of pareto optimal solutions\n";
+
+    for(int i=n_start ; i < n_experiments + 1; i++) {
         double n_pareto_optimal_solutions = 
                     experiment(i, mode, n_rounds);
 
