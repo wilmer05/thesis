@@ -13,5 +13,8 @@ alg.o:
 experiments.o:
 	$(CC) -c -o experiments.o experiments.cpp $(CFLAGS)
 
+regression:
+	$(CC) -o regression regression.cpp
+
 clean:
-	rm *.o
+	rm *.o regression
