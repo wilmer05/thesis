@@ -14,11 +14,12 @@ double compute_error(double b, double a) {
     double error = 0.;
     for(int i=0 ; i < xs.size(); i++) {
         error += pow(ys[i] - b * pow((double)xs[i] + 1, a), 2.0);
+        //error += pow(ys[i] - b * ((double)xs[i] + 1) * pow(log((double)xs[i] + 1), a), 2.0);
     }
     //cout << b << " " << a << " error: " << error << endl; 
     //cout << b * pow((double)xs.size() + 1, a) << " " << ys[ys.size()-1]<< endl;
 
-    return error;
+    return error / (double)xs.size();
 }
 
 double compute_best_a_for_b(double b) {
@@ -79,7 +80,7 @@ int main() {
     //        best_b = b, best_a = l;
     //} 
 
-    printf("Best function %.8lf * x ^ %.8lf\n\tError: %.4lf\n", best_b, best_a, compute_error(best_b, best_a));
+    printf("Best function %.12lf * x ^ %.8lf\n\tError: %.4lf\n", best_b, best_a, compute_error(best_b, best_a));
 
     return 0;
 }
