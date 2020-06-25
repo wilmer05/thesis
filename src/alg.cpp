@@ -1,11 +1,22 @@
 #include<iostream>
 #include<vector>
 #include<utility>
+#include<algorithm>
+#include<cmath>
+#include<cassert>
+#include<cstdio>
 #include"alg.hpp"
+
 
 using namespace std;
 
-vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<double> &profits) {
+double item::dantzig_slope = .0;
+
+/* Nemhauser Ullman algorithm that looks for the pareto optimal solutions
+ * of a knapsack problem till some maximum weight
+ * */
+
+vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<double> &profits, double W) {
     vector<candidate> p;
     p.push_back(candidate(0,0));
     
@@ -13,9 +24,12 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
     for(int i=0; i<n; i++) {
         int sz = p.size();
         vector<candidate> q(sz);
+        int last = 0;
         for(int j = 0 ; j < sz; j++ ) {
-            q[j] = candidate(p[j].weight + weights[i], p[j].profit + profits[i]);
+            if (p[j].weight + weights[i] <= W) 
+                q[last++] = candidate(p[j].weight + weights[i], p[j].profit + profits[i]);
         }
+        q.resize(last);
 
         int k = 0, cnt_p = 0, cnt_q = 0;
         vector<candidate> tmp(sz << 1);
@@ -49,5 +63,117 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
         p = tmp; 
     }
 
+    assert(!p.size() || p[p.size() - 1].weight <= W);
     return p;
+}
+
+
+
+/* Core Algorithm to solve knapsack problem with capacity W
+ *
+ * */
+
+double get_loss(const item &a) {
+    return fabs(a.profit - item::dantzig_slope * a.weight);
+}
+
+bool smaller_loss(const item &a, const item &b) {
+    return get_loss(a) < get_loss(b);
+}
+
+double get_mask_profit(const vector<item> &core, int mask) {
+    double total_profit = 0.0;
+    for(int i =0 ; i < MAX_BRUTE_FORCE_CORE_SIZE; i++) 
+        if(mask & (1 << i)) total_profit += core[i].profit;
+    
+    return total_profit;
+}
+
+
+double get_mask_weight(const vector<item> &core, int mask) {
+    double total_weight = 0.0;
+    for(int i =0 ; i < MAX_BRUTE_FORCE_CORE_SIZE; i++) 
+        if(mask & (1 << i)) total_weight += core[i].weight;
+    
+    return total_weight;
+}
+
+
+double brute_force(const vector<item> &core, double W) {
+    assert(core.size() <= MAX_BRUTE_FORCE_CORE_SIZE);
+
+    double best_sol = 0.0;
+
+    for(int mask=0 ;mask < (1 << ((int)core.size())); mask++)
+        if(get_mask_weight(core, mask) <= W)
+            best_sol = max(best_sol, get_mask_profit(core, mask)); 
+
+    return best_sol;
+}
+
+double get_integral_solution(const vector<item> &core, double W) {
+    if(core.size() <= MAX_BRUTE_FORCE_CORE_SIZE) 
+        return brute_force(core, W);
+    else {
+        vector<double> ws,ps;
+        for(int i =0;i < core.size(); i++) {
+            ws.push_back(core[i].weight);
+            ps.push_back(core[i].profit);
+        }
+        vector<candidate> pos = nemhauser_ullman(ws ,ps, W);
+        if(pos.size()) return pos[pos.size() - 1].profit;
+        return 0.0;
+    }
+}
+
+double core_algorithm(const vector<double> &weights, const vector<double> &profits, double W) {
+    vector<item> items(weights.size());
+
+    for(int i=0; i<weights.size(); i++) 
+        items[i].weight = weights[i], items[i].profit = profits[i];
+    
+    sort(items.begin(), items.end()); 
+    
+    int break_item = 0;
+    double fractional_solution = 0.0;
+    double integral_solution_without_core = 0.0;
+    while(break_item < items.size() && W >= items[break_item].weight) {
+        fractional_solution += items[break_item].profit;
+        integral_solution_without_core += items[break_item].profit;
+        W -= items[break_item].weight;
+        items[break_item].belongs_to_fractional_solution = true;
+        break_item++;
+    }
+
+    if(break_item >= items.size()) return fractional_solution;
+    fractional_solution += (W / items[break_item].weight) * items[break_item].profit;
+
+    items[break_item].is_ray_item = true;
+    item::dantzig_slope = items[break_item].profit / items[break_item].weight;
+
+    sort(items.begin(), items.end(), smaller_loss);
+
+    double gamma = 0;
+    double integral_solution = 0.0;
+    int last_core_item = 0;
+
+    vector<item> core;
+    core.push_back(items[0]);
+    assert(items[0].is_ray_item);
+
+    do{ 
+        integral_solution = get_integral_solution(core, W) + integral_solution_without_core;
+        last_core_item++; 
+        if(last_core_item < items.size()) {
+            core.push_back(items[last_core_item]);
+            gamma = get_loss(items[last_core_item]);
+            if(items[last_core_item].belongs_to_fractional_solution) {
+                integral_solution_without_core -= items[last_core_item].profit;
+                W += items[last_core_item].weight;
+            }
+        }
+        
+    } while(fractional_solution - integral_solution > gamma && last_core_item < items.size());
+
+    return integral_solution;
 }

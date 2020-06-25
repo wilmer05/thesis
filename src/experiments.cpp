@@ -14,7 +14,15 @@ double experiment(int n_items, int mode, int n_rounds) {
     for(int i = 0; i < n_rounds; i++) {
         vector<double> weights = generate_input(n_items, mode);
         vector<double> profits = generate_input(n_items, mode);
-        vector<candidate> r = nemhauser_ullman(weights, profits);
+        double W = generate_random_uniform_val(1, 0, n_items)[0];
+        vector<candidate> r = nemhauser_ullman(weights, profits, W);
+
+        printf("NU Sol=%.6lf and", r.size() ? r[r.size() - 1].profit : 0);
+        double core_sol = core_algorithm(weights, profits, W);
+
+        printf("Core Sol = %.6lf\n", core_sol);
+
+        assert(core_sol == r[r.size() - 1].profit);
 
         mean += (double) r.size();
     }
