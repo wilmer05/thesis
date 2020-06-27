@@ -4,6 +4,7 @@
 #include"utils.hpp"
 #include"experiments.hpp"
 #include<cstdio>
+#include<cmath>
 
 using namespace std;
 
@@ -20,11 +21,11 @@ double experiment(int n_items, int mode, int n_rounds) {
 
         double core_sol = core_algorithm(weights, profits, W);
 
-        printf("NU Sol=%.20lf and Core Sol = %.20lf\n", r.size() ? r[r.size() - 1].profit : 0, core_sol);
-        fflush(stdout);
+        //printf("NU Sol=%.20lf and Core Sol = %.20lf\n", r.size() ? r[r.size() - 1].profit : 0, core_sol);
+        //fflush(stdout);
         ///printf("Core Sol = %.6lf\n", core_sol);
 
-        assert((!r.size() && core_sol == 0.0)|| core_sol == r[r.size() - 1].profit);
+        assert((!r.size() && core_sol == 0.0)|| fabs(r[r.size() - 1].profit) - core_sol < 1e-6);
 
         mean += (double) r.size();
     }

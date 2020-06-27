@@ -130,8 +130,10 @@ double get_integral_solution(const vector<item> &core, double W) {
 double core_algorithm(const vector<double> &weights, const vector<double> &profits, double W) {
     vector<item> items(weights.size());
 
-    for(int i=0; i<weights.size(); i++) 
+    for(int i=0; i<weights.size(); i++) {
         items[i].weight = weights[i], items[i].profit = profits[i];
+        items[i].belongs_to_fractional_solution = items[i].is_ray_item = false;
+    }
     
     sort(items.begin(), items.end()); 
 
