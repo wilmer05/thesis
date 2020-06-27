@@ -3,30 +3,14 @@
 
 #include<random>
 #include<vector>
+#include<cmath>
 
-vector<double> generate_random_uniform_val(int n, double min, double max) {
-    random_device rd;
-    mt19937 gen(rd());
-    default_random_engine generator;
-    uniform_real_distribution<double> distribution(min,max);
+#define  SIGNIFICANT_PART 1e9
 
-    vector<double> ret(n);
+using namespace std;
 
-    for(int i=0; i < n; i++) 
-        ret[i] = distribution(gen);
+vector<double> generate_random_uniform_val(int, double, double);
 
-    return ret;
-}
-
-vector<double> generate_input(int n, int mode) {
-    vector<double> ret;
-
-    if(mode == 1) {
-        ret = generate_random_uniform_val(n, 0.0, 1.);
-    } else if(mode == 2) {
-        ret = generate_random_uniform_val(n, -1., 1.);
-    }
-    return ret;
-} 
+vector<double> generate_input(int, int);
 
 #endif

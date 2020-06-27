@@ -5,6 +5,7 @@
 #include<cmath>
 #include<cassert>
 #include<cstdio>
+#include"utils.hpp"
 #include"alg.hpp"
 
 
@@ -78,7 +79,7 @@ double get_loss(const item &a) {
 }
 
 bool smaller_loss(const item &a, const item &b) {
-    return get_loss(a) < get_loss(b);
+    return get_loss(b) > get_loss(a);
 }
 
 double get_mask_profit(const vector<item> &core, int mask) {
@@ -133,7 +134,7 @@ double core_algorithm(const vector<double> &weights, const vector<double> &profi
         items[i].weight = weights[i], items[i].profit = profits[i];
     
     sort(items.begin(), items.end()); 
-    
+
     int break_item = 0;
     double fractional_solution = 0.0;
     double integral_solution_without_core = 0.0;
@@ -146,24 +147,22 @@ double core_algorithm(const vector<double> &weights, const vector<double> &profi
     }
 
     if(break_item >= items.size()) return fractional_solution;
-    fractional_solution += (W / items[break_item].weight) * items[break_item].profit;
+    fractional_solution += (W * items[break_item].profit)/ items[break_item].weight;
 
     items[break_item].is_ray_item = true;
     item::dantzig_slope = items[break_item].profit / items[break_item].weight;
 
     sort(items.begin(), items.end(), smaller_loss);
+    for(int i =0 ; i< items.size() -1; i ++) assert(get_loss(items[i]) <= get_loss(items[i+1]));
+    assert(items[0].is_ray_item);
 
     double gamma = 0;
     double integral_solution = 0.0;
     int last_core_item = 0;
 
     vector<item> core;
-    core.push_back(items[0]);
-    assert(items[0].is_ray_item);
 
     do{ 
-        integral_solution = get_integral_solution(core, W) + integral_solution_without_core;
-        last_core_item++; 
         if(last_core_item < items.size()) {
             core.push_back(items[last_core_item]);
             gamma = get_loss(items[last_core_item]);
@@ -172,8 +171,12 @@ double core_algorithm(const vector<double> &weights, const vector<double> &profi
                 W += items[last_core_item].weight;
             }
         }
-        
+
+        double core_solution = get_integral_solution(core, W);
+        integral_solution = core_solution + integral_solution_without_core;
+        last_core_item++; 
     } while(fractional_solution - integral_solution > gamma && last_core_item < items.size());
 
+    assert(fractional_solution >= integral_solution);
     return integral_solution;
 }
