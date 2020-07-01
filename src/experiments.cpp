@@ -5,6 +5,7 @@
 #include"experiments.hpp"
 #include<cstdio>
 #include<cmath>
+#include<chrono>
 
 using namespace std;
 
@@ -13,13 +14,23 @@ double experiment(int n_items, int mode, int n_rounds) {
     if (n_rounds == 0)
         return .0;
 
+    double t_core = 0.0;
+    double t_nemhauser_ullman = 0.0;
+
     for(int i = 0; i < n_rounds; i++) {
         vector<double> weights = generate_input(n_items, mode);
         vector<double> profits = generate_input(n_items, mode);
         double W = generate_random_uniform_val(1, 0, n_items)[0];
+    
+        auto start = std::chrono::high_resolution_clock::now();
         vector<candidate> r = nemhauser_ullman(weights, profits, W);
+        auto finish = std::chrono::high_resolution_clock::now(); 
+        t_nemhauser_ullman += std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
 
+        start = std::chrono::high_resolution_clock::now();
         double core_sol = core_algorithm(weights, profits, W);
+        finish = std::chrono::high_resolution_clock::now(); 
+        t_core += std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
 
         assert((!r.size() && core_sol == 0.0)|| fabs(r[r.size() - 1].profit) - core_sol < 1e-6);
 
@@ -32,6 +43,9 @@ double experiment(int n_items, int mode, int n_rounds) {
     }*/
 
     mean /= (double) n_rounds; 
+    t_core /= (double) n_rounds;
+    t_nemhauser_ullman /= (double) n_rounds;
+    cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
 
     return mean;
 }
