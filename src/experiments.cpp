@@ -23,18 +23,19 @@ double experiment(int n_items, int mode, int n_rounds) {
         double W = generate_random_uniform_val(1, 0, n_items)[0];
     
         auto start = std::chrono::high_resolution_clock::now();
-        vector<candidate> r = nemhauser_ullman(weights, profits, W);
-        auto finish = std::chrono::high_resolution_clock::now(); 
-        t_nemhauser_ullman += std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
+        //vector<candidate> r = nemhauser_ullman(weights, profits, W);
+        //auto finish = std::chrono::high_resolution_clock::now(); 
+        //t_nemhauser_ullman += std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
 
-        start = std::chrono::high_resolution_clock::now();
+        //start = std::chrono::high_resolution_clock::now();
         double core_sol = core_algorithm(weights, profits, W);
-        finish = std::chrono::high_resolution_clock::now(); 
+        //finish = std::chrono::high_resolution_clock::now(); 
+        auto finish = std::chrono::high_resolution_clock::now(); 
         t_core += std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
 
-        assert((!r.size() && core_sol == 0.0)|| fabs(r[r.size() - 1].profit) - core_sol < 1e-6);
+        //assert((!r.size() && core_sol == 0.0)|| fabs(r[r.size() - 1].profit) - core_sol < 1e-8);
 
-        mean += (double) r.size();
+        //mean += (double) r.size();
     }
 
     //cout << "Solutions:\n" << endl;
@@ -45,7 +46,8 @@ double experiment(int n_items, int mode, int n_rounds) {
     mean /= (double) n_rounds; 
     t_core /= (double) n_rounds;
     t_nemhauser_ullman /= (double) n_rounds;
-    cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
+    //cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
+    cout << "Time: \t" << t_core << endl;
 
     return mean;
 }
