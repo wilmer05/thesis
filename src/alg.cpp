@@ -62,7 +62,11 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
 
         tmp.resize(k);
         p = tmp; 
+
+        cout << k - sz << " ";
     }
+
+    cout << endl;
 
     assert(!p.size() || p[p.size() - 1].weight <= W);
     return p;
