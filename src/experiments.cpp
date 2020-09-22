@@ -6,10 +6,15 @@
 #include<cstdio>
 #include<cmath>
 #include<chrono>
+#include<algorithm>
 
 using namespace std;
 
-double experiment(int n_items, int mode, int n_rounds) {
+double experiment(
+        int n_items,
+        int mode,
+        int n_rounds,
+        bool read_from_stdin) {
     double mean = 0.0;
     if (n_rounds == 0)
         return .0;
@@ -20,9 +25,30 @@ double experiment(int n_items, int mode, int n_rounds) {
     vector<double> counters(n_items, 0.0);
 
     for(int i = 0; i < n_rounds; i++) {
-        vector<double> weights = generate_input(n_items, mode);
-        vector<double> profits = generate_input(n_items, mode);
-        double W = generate_random_uniform_val(1, 0, n_items)[0];
+
+        vector<double> weights;
+        vector<double> profits;
+        double W;
+
+        if (!read_from_stdin) {
+            weights = generate_input(n_items, mode);
+            profits = generate_input(n_items, mode);
+            W = generate_random_uniform_val(1, 0, n_items)[0];
+        } else {
+            double wi, pi;
+            cin >> W;
+            cout << W << endl;
+            while(cin >> wi >> pi) {
+                weights.push_back(wi);
+                profits.push_back(pi);
+            }
+
+            int last = weights.size() - 1;
+            double eps = 1e-8;
+            vector<double> deviation = generate_random_uniform_val(2, -eps, eps);
+            weights[last] += max(0.0,min(1.0, deviation[0]));
+            profits[last] += max(0.0, min(1.0, deviation[1]));
+        }
     
         auto start = std::chrono::high_resolution_clock::now();
         vector<candidate> r = nemhauser_ullman(weights, profits, W);
@@ -68,14 +94,14 @@ double experiment(int n_items, int mode, int n_rounds) {
     return mean;
 }
 
-void run_experiments(int mode, int n_rounds, int n_start, int n_experiments) {
+void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin) {
 
     if(n_start == 1)
         cout << "Starting experiments\nN\t|\tNumber of pareto optimal solutions\n";
 
     for(int i=n_start ; i < n_experiments + 1; i++) {
         double n_pareto_optimal_solutions = 
-                    experiment(i, mode, n_rounds);
+                    experiment(i, mode, n_rounds, read_from_stdin);
 
         //cout << i << "\t|\t " << n_pareto_optimal_solutions << endl;
     }

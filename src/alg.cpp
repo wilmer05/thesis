@@ -63,10 +63,20 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
         tmp.resize(k);
         p = tmp; 
 
-        cout << k - sz << " ";
+        //cout << k << endl;
+        if( k - sz < 0 ) {
+            cout << "Drop found: " << k - sz  << "... #POS before: " << sz << " and #POS after " << k << endl;
+            cout << W << endl;
+            for(int j = 0 ; j <= i; j++) {
+                cout << weights[j] << " " << profits[j] << endl;
+                cout << endl;
+            }
+        }
+        //cout << k - sz << " ";
     }
 
-    cout << endl;
+    //cout << endl;
+    //cout << "bla" << endl;
 
     assert(!p.size() || p[p.size() - 1].weight <= W);
     return p;
