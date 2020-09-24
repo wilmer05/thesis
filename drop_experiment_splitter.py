@@ -8,6 +8,8 @@ drop_before = []
 
 def run_instance(ws, ps, drop_before):
     total = 0
+#    print(ws)
+#    print(ps)
     f = open("tmp", "w")
     f.write(W + "\n")
     for w, p in zip(ws, ps):
@@ -15,8 +17,7 @@ def run_instance(ws, ps, drop_before):
 
     f.close()
 
-    cmd = "./src/run " + " ".join(sys.argv[1:3] ) + " " + str(len(ws)) + " " + str(len(ps)) + " 1  < ./tmp > ./tmp_result" 
-    print(cmd)
+    cmd = "./src/run " + " ".join(sys.argv[1:3] ) + " " + str(len(ws)) + " " + str(len(ps)) + " 1  < tmp > tmp_result" 
     os.system(cmd)
 
     f2 = open("./tmp_result")
@@ -25,7 +26,7 @@ def run_instance(ws, ps, drop_before):
     cnt = 0
     for line in lines:
         if "Drop" in line:
-            drop_after += int(line.split("...")[0].split(":")[1])
+            drop_after += int(line.split("after")[1])
             cnt += 1
     if cnt > 0 :
         drop_after /= cnt
@@ -46,9 +47,8 @@ for line in sys.stdin:
 
         ws = []
         ps = []
-        drop_before = line.split("...")[0].split(":")[1]
+        drop_before = line.split("after")[1]
         drop_before = int(drop_before)
-        continue
 
     else:
         sp = line.split()

@@ -71,6 +71,7 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
                 cout << weights[j] << " " << profits[j] << endl;
                 cout << endl;
             }
+            break;
         }
         //cout << k - sz << " ";
     }
