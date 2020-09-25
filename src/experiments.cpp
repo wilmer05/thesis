@@ -16,6 +16,12 @@ double experiment(
         int n_rounds,
         bool read_from_stdin) {
     double mean = 0.0;
+
+    double mean_max_weight_diff = 0.0;
+    double mean_max_profit_diff = 0.0;
+    double mean_max_weight = 0.0;
+    double mean_max_profit = 0.0;
+
     if (n_rounds == 0)
         return .0;
 
@@ -84,6 +90,19 @@ double experiment(
         //assert((!r.size() && core_sol == 0.0)|| fabs(r[r.size() - 1].profit) - core_sol < 1e-8);
 
         mean += (double) r.size();
+        double max_dist_profit = 0.0;
+        double max_dist_weight = 0.0;
+        double cnt = r.size();
+        mean_max_weight += r[r.size() - 1].weight;
+        mean_max_profit += r[r.size() - 1].profit;
+        for(int i=0 ; i + 1 < r.size() ; i++) {
+            max_dist_profit = max(max_dist_profit, r[i+1].profit - r[i].profit);
+            max_dist_weight = max(max_dist_weight, r[i+1].weight - r[i].weight);
+        }
+
+        cout << max_dist_profit << "=max_dist_profit && " << max_dist_weight << "=max_dist_weight " << endl;
+        mean_max_weight_diff += max_dist_weight;
+        mean_max_profit_diff += max_dist_profit;
     }
 
     //cout << "Solutions:\n" << endl;
@@ -92,11 +111,20 @@ double experiment(
     }*/
 
     mean /= (double) n_rounds; 
+    mean_max_weight_diff /= (double) n_rounds;
+    mean_max_profit_diff /= (double) n_rounds;
+    mean_max_weight /= (double) n_rounds;
+    mean_max_profit /= (double) n_rounds;
+
     //t_core /= (double) n_rounds;
     t_nemhauser_ullman /= (double) n_rounds;
     //cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
     //cout << "Time: \t" << t_core << endl;
 
+    cout << "mean of max_weight diff = " << mean_max_weight_diff << endl;
+    cout << "mean of max_profit diff = " << mean_max_profit_diff << endl;
+    cout << "mean of max_weight = " << mean_max_weight << endl;
+    cout << "mean of max_profit = " << mean_max_profit << endl;
 //    cout << "Counters:\n" << endl;
     
 //    for(int i =0; i < counters.size();i++) {
