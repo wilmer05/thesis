@@ -17,11 +17,13 @@ double item::dantzig_slope = .0;
  * of a knapsack problem till some maximum weight
  * */
 
-vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<double> &profits, double W) {
+vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<double> &profits, double W, bool print_drops) {
     vector<candidate> p;
     p.push_back(candidate(0,0));
     
     int n = weights.size();
+    int drops = 0;
+    int drop_count = 0;
     for(int i=0; i<n; i++) {
         int sz = p.size();
         vector<candidate> q(sz);
@@ -62,9 +64,11 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
 
         tmp.resize(k);
         p = tmp; 
-
+    
+        drops += min(0, k - sz); 
+        
         //cout << k << endl;
-        //if( k - sz < 0 ) {
+        if( k - sz < 0 ) {
         //    cout << "Drop found: " << k - sz  << "... #POS before: " << sz << " and #POS after " << k << endl;
         //    cout << W << endl;
         //    for(int j = 0 ; j <= i; j++) {
@@ -72,12 +76,16 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
         //        cout << endl;
         //    }
         //    break;
-        //}
+            drop_count ++;
+        }
         //cout << k - sz << " ";
     }
 
     //cout << endl;
     //cout << "bla" << endl;
+    if(print_drops) {
+        cout << "Total drops = " << drops << " Total sols=" << p.size()<< " Drop count=" << drop_count << endl;
+    }
 
     assert(!p.size() || p[p.size() - 1].weight <= W);
     return p;
@@ -136,7 +144,7 @@ double get_integral_solution(const vector<item> &core, double W) {
             ws.push_back(core[i].weight);
             ps.push_back(core[i].profit);
         }
-        vector<candidate> pos = nemhauser_ullman(ws ,ps, W);
+        vector<candidate> pos = nemhauser_ullman(ws ,ps, W, 0);
         if(pos.size()) return pos[pos.size() - 1].profit;
         return 0.0;
     }

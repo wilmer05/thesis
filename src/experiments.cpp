@@ -14,13 +14,16 @@ double experiment(
         int n_items,
         int mode,
         int n_rounds,
-        bool read_from_stdin) {
+        bool read_from_stdin,
+        bool print_means,
+        bool print_drops) {
     double mean = 0.0;
 
     double mean_max_weight_diff = 0.0;
     double mean_max_profit_diff = 0.0;
     double mean_max_weight = 0.0;
     double mean_max_profit = 0.0;
+    double mean_weight_diff = 0.0;
 
     if (n_rounds == 0)
         return .0;
@@ -66,7 +69,7 @@ double experiment(
         profits[last] = max(0.0, min(1.0, profits[last] + deviation[1]));
 
         auto start = std::chrono::high_resolution_clock::now();
-        vector<candidate> r = nemhauser_ullman(weights, profits, W);
+        vector<candidate> r = nemhauser_ullman(weights, profits, W, print_drops);
         auto finish = std::chrono::high_resolution_clock::now(); 
         t_nemhauser_ullman += std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
 
@@ -95,12 +98,16 @@ double experiment(
         double cnt = r.size();
         mean_max_weight += r[r.size() - 1].weight;
         mean_max_profit += r[r.size() - 1].profit;
+        double local_weight_diff = 0.0;
         for(int i=0 ; i + 1 < r.size() ; i++) {
             max_dist_profit = max(max_dist_profit, r[i+1].profit - r[i].profit);
             max_dist_weight = max(max_dist_weight, r[i+1].weight - r[i].weight);
+            local_weight_diff += r[i+1].profit - r[i].profit;
         }
+        local_weight_diff /= r.size();
+        mean_weight_diff += local_weight_diff;
 
-        cout << max_dist_profit << "=max_dist_profit && " << max_dist_weight << "=max_dist_weight " << endl;
+//        cout << max_dist_profit << "=max_dist_profit && " << max_dist_weight << "=max_dist_weight " << endl;
         mean_max_weight_diff += max_dist_weight;
         mean_max_profit_diff += max_dist_profit;
     }
@@ -115,16 +122,21 @@ double experiment(
     mean_max_profit_diff /= (double) n_rounds;
     mean_max_weight /= (double) n_rounds;
     mean_max_profit /= (double) n_rounds;
+    mean_weight_diff /= (double) n_rounds;
 
     //t_core /= (double) n_rounds;
     t_nemhauser_ullman /= (double) n_rounds;
     //cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
     //cout << "Time: \t" << t_core << endl;
 
-    cout << "mean of max_weight diff = " << mean_max_weight_diff << endl;
-    cout << "mean of max_profit diff = " << mean_max_profit_diff << endl;
-    cout << "mean of max_weight = " << mean_max_weight << endl;
-    cout << "mean of max_profit = " << mean_max_profit << endl;
+    if(print_means) {
+        cout <<"Means_for_N=" << n_items << " ";
+        cout << "mean_max_weight_diff=" << mean_max_weight_diff << " ";
+        cout << "mean_max_profit_diff=" << mean_max_profit_diff << " ";
+        cout << "mean_max_weight=" << mean_max_weight << " ";
+        cout << "mean_max_profit=" << mean_max_profit << " ";
+        cout << "mean_weight_diff=" << mean_weight_diff << endl;
+    }
 //    cout << "Counters:\n" << endl;
     
 //    for(int i =0; i < counters.size();i++) {
@@ -135,7 +147,7 @@ double experiment(
     return mean;
 }
 
-void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin) {
+void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin, bool print_means, bool print_drops) {
 
     if(n_start == 1)
         cout << "Starting experiments\nN\t|\tNumber of pareto optimal solutions\n";
@@ -143,7 +155,7 @@ void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, boo
     //cerr << "n-round " << n_rounds << endl;
     for(int i=n_start ; i < n_experiments + 1; i++) {
         double n_pareto_optimal_solutions = 
-                    experiment(i, mode, n_rounds, read_from_stdin);
+                    experiment(i, mode, n_rounds, read_from_stdin, print_means, print_drops);
 
         //cout << i << "\t|\t " << n_pareto_optimal_solutions << endl;
     }

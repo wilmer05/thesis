@@ -38,7 +38,7 @@ struct item {
     }
 };
 
-vector<candidate> nemhauser_ullman(const vector<double> &, const vector<double> &, double);
+vector<candidate> nemhauser_ullman(const vector<double> &, const vector<double> &, double, bool);
 
 double core_algorithm(const vector<double> &, const vector<double> &, double);
 
