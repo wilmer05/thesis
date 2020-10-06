@@ -99,6 +99,9 @@ double experiment(
         mean_max_weight += r[r.size() - 1].weight;
         mean_max_profit += r[r.size() - 1].profit;
         double local_weight_diff = 0.0;
+        double avg_diff_weight = 0.0;
+
+
         for(int i=0 ; i + 1 < r.size() ; i++) {
             max_dist_profit = max(max_dist_profit, r[i+1].profit - r[i].profit);
             max_dist_weight = max(max_dist_weight, r[i+1].weight - r[i].weight);
@@ -123,6 +126,7 @@ double experiment(
     mean_max_weight /= (double) n_rounds;
     mean_max_profit /= (double) n_rounds;
     mean_weight_diff /= (double) n_rounds;
+    //avg_diff_weight /= (double) n_rounds;
 
     //t_core /= (double) n_rounds;
     t_nemhauser_ullman /= (double) n_rounds;

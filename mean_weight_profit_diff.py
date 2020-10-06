@@ -8,7 +8,7 @@ from math import log
 #    sys.exit(1)
 
 fig = plt.figure()
-plt.title('Max weight and profits ')
+plt.title('Experiment: Mean of max weight / Mean of weight diff')
 plt.xlabel('N')
 
 cnt = 0
@@ -22,6 +22,7 @@ try:
     ys_max_weight_mean = []
     ys_max_profit_mean = []
     ys_division = []
+    ys_weight_diff = []
 
     N = 0
     sum_total = 0
@@ -33,12 +34,14 @@ try:
             max_profit_diff = float(line.split('=')[3].split()[0])
             max_weight = float(line.split('=')[4].split()[0])
             max_profit = float(line.split('=')[5].split()[0])
-
+            mean_weight_diff = float(line.split('=')[6].split()[0])
+            
             ys_max_weight_diff_mean.append(max_weight_diff)
             ys_max_profit_diff_mean.append(max_profit_diff)
             ys_max_weight_mean.append(max_weight)
             ys_max_profit_mean.append(max_profit)
             ys_division.append(max_weight / max_weight_diff)
+            ys_weight_diff.append(max_weight / mean_weight_diff)
 
             xs.append(N)
 
@@ -51,11 +54,11 @@ try:
         sum_total += (float(line.split('=')[2].split()[0]))
         cnt += 1
 
-#    plt.plot(
-#        xs,
-#        ys_total,
-#        linestyle='-',
-#        label='Avg. #POS total')
+    plt.plot(
+        xs,
+        ys_total,
+        linestyle='-',
+        label='Avg. #POS total')
 
 
 #    plt.plot(
@@ -71,27 +74,25 @@ try:
 #        linestyle='-',
 #        label='Avg. max profit diff')
 
-    plt.plot(
-        xs,
-        ys_max_weight_mean,
-        linestyle='-',
-        label='Avg. max weight')
-
-
-    plt.plot(
-        xs,
-        ys_max_profit_mean,
-        linestyle='-',
-        label='Avg. max profit')
-
-
-
-
 #    plt.plot(
 #        xs,
-#        ys_division,
+#        ys_max_weight_mean,
 #        linestyle='-',
-#        label='Avg. Max weight / Avg. Max weight diff')
+#        label='Avg. max weight')
+#
+#
+#    plt.plot(
+#        xs,
+#        ys_max_profit_mean,
+#        linestyle='-',
+#        label='Avg. max profit')
+
+
+    plt.plot(
+        xs,
+        ys_weight_diff,
+        linestyle='-',
+        label='Avg. Max weight / Avg. weight diff')
 
 except Exception as inst:
     print('File error')
