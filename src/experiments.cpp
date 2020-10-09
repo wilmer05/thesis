@@ -73,6 +73,7 @@ double experiment(
         auto finish = std::chrono::high_resolution_clock::now(); 
         t_nemhauser_ullman += std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
 
+        r = nemhauser_ullman(weights, profits, W, false);
 
         weights[last] = ow;
         profits[last] = op;
@@ -107,7 +108,7 @@ double experiment(
             max_dist_weight = max(max_dist_weight, r[i+1].weight - r[i].weight);
             local_weight_diff += r[i+1].profit - r[i].profit;
         }
-        local_weight_diff /= r.size();
+        local_weight_diff /= (r.size() - 1);
         mean_weight_diff += local_weight_diff;
 
 //        cout << max_dist_profit << "=max_dist_profit && " << max_dist_weight << "=max_dist_weight " << endl;
