@@ -11,9 +11,15 @@ struct candidate {
     double weight;
     double profit;
 
-    candidate() {}
+	int n_iterations_alive;
 
-    candidate(double w, double p) : weight(w), profit(p) {}
+    candidate() : n_iterations_alive(0) {}
+
+    candidate(double w, double p) : weight(w), profit(p), n_iterations_alive(0) {}
+
+	void tick() {
+		n_iterations_alive++;
+	}
 
     bool dominates(const candidate &other) const {
         return weight <= other.weight && profit >= other.profit && 
@@ -53,5 +59,7 @@ double brute_force(const vector<item> &, double);
 double get_mask_profit(const vector<item> &, int);
 
 double get_mask_weight(const vector<item> &, int);
+
+void make_ticks(vector<candidate> &);
 
 #endif

@@ -17,6 +17,11 @@ double item::dantzig_slope = .0;
  * of a knapsack problem till some maximum weight
  * */
 
+void make_ticks(vector<candidate> &v) {
+	for(int i =0; i< v.size(); i++)
+		v[i].tick();
+}
+
 vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<double> &profits, double W, bool print_drops) {
     vector<candidate> p;
     p.push_back(candidate(0,0));
@@ -78,6 +83,8 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
         //    break;
             drop_count ++;
         }
+
+		make_ticks(p);
         //cout << k - sz << " ";
     }
 
@@ -88,6 +95,10 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
     }
 
     assert(!p.size() || p[p.size() - 1].weight <= W);
+	cout << "Alive results: ";
+	for(int i = 0 ; i < p.size(); i++)
+		cout << p[i].n_iterations_alive << " ";
+	cout << endl;
     return p;
 }
 
