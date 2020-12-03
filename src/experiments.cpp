@@ -8,8 +8,32 @@
 #include<chrono>
 #include<algorithm>
 #include<cassert>
+#include<utility>
 
 using namespace std;
+
+vector<pair<double , double> > v;
+
+bool sort_by_difference_to_ray(pair<double, double> a, pair<double, double > b) {
+    if(a.second < 1e-9)
+        return true;
+
+    if(b.second < 1e-9)
+        return false;
+
+    return a.first / a.second > b.first / b.second;
+}
+
+
+bool sort_inverse_of_difference_to_ray(pair<double, double> a, pair<double, double > b) {
+    if(a.second < 1e-9)
+        return false;
+
+    if(b.second < 1e-9)
+        return true;
+
+    return a.first / a.second < b.first / b.second;
+}
 
 double experiment(
         int n_items,
@@ -17,7 +41,8 @@ double experiment(
         int n_rounds,
         bool read_from_stdin,
         bool print_means,
-        bool print_drops) {
+        bool print_drops,
+        int with_sort) {
     double mean = 0.0;
 
     double mean_max_weight_diff = 0.0;
@@ -56,18 +81,38 @@ double experiment(
             
             }
             //cerr << endl;
-
         }
-    
+
+        v.clear(); 
+        v = vector<pair<double, double> >(profits.size());
+        for(int i =0 ;i < weights.size(); i++) {
+            v[i].first = profits[i];
+            v[i].second = weights[i];
+        }
+ 
+        if(with_sort == 1)
+            sort(v.begin(), v.end(), sort_by_difference_to_ray);
+        if(with_sort == 2)
+            sort(v.begin(), v.end(), sort_inverse_of_difference_to_ray);
+
+        weights.clear();
+        profits.clear();
+        weights = vector<double>(v.size());
+        profits = vector<double>(v.size());
+
+        for(int i =0 ; i < v.size(); i++) {
+            weights[i] = v[i].second;
+            profits[i] = v[i].first;
+        } 
 
         int last = weights.size() - 1;
         double eps = 1e-2;
         vector<double> deviation = generate_random_uniform_val(2, -eps, eps);
-	double ow = weights[last];
-	double op = profits[last];
+    	double ow = weights[last];
+    	double op = profits[last];
 
-        weights[last] = max(0.0,min(1.0, weights[last] + deviation[0]));
-        profits[last] = max(0.0, min(1.0, profits[last] + deviation[1]));
+        //weights[last] = max(0.0,min(1.0, weights[last] + deviation[0]));
+        //profits[last] = max(0.0, min(1.0, profits[last] + deviation[1]));
 
         auto start = std::chrono::high_resolution_clock::now();
         vector<candidate> r = nemhauser_ullman(weights, profits, W, print_drops);
@@ -132,7 +177,7 @@ double experiment(
 
     //t_core /= (double) n_rounds;
     t_nemhauser_ullman /= (double) n_rounds;
-    //cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
+    cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
     //cout << "Time: \t" << t_core << endl;
 
     if(print_means) {
@@ -153,7 +198,7 @@ double experiment(
     return mean;
 }
 
-void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin, bool print_means, bool print_drops) {
+void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin, bool print_means, bool print_drops, int with_sort) {
 
     if(n_start == 1)
         cout << "Starting experiments\nN\t|\tNumber of pareto optimal solutions\n";
@@ -161,7 +206,7 @@ void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, boo
     //cerr << "n-round " << n_rounds << endl;
     for(int i=n_start ; i < n_experiments + 1; i++) {
         double n_pareto_optimal_solutions = 
-                    experiment(i, mode, n_rounds, read_from_stdin, print_means, print_drops);
+                    experiment(i, mode, n_rounds, read_from_stdin, print_means, print_drops, with_sort);
 
         //cout << i << "\t|\t " << n_pareto_optimal_solutions << endl;
     }

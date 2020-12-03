@@ -84,7 +84,7 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
             drop_count ++;
         }
 
-		make_ticks(p);
+		//make_ticks(p);
         //cout << k - sz << " ";
     }
 
@@ -95,10 +95,10 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
     }
 
     assert(!p.size() || p[p.size() - 1].weight <= W);
-	cout << "Alive results: ";
-	for(int i = 0 ; i < p.size(); i++)
-		cout << p[i].n_iterations_alive << " ";
-	cout << endl;
+	//cout << "Alive results: ";
+	//for(int i = 0 ; i < p.size(); i++)
+	//	cout << p[i].n_iterations_alive << " ";
+	//cout << endl;
     return p;
 }
 
