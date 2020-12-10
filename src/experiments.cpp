@@ -273,6 +273,38 @@ double experiment(
 }
 
 void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin, bool print_means, bool print_drops, int with_sort) {
+        cout << "Sort mode: ";
+        switch(with_sort) {
+            case 1:   
+                cout << "normal" << endl;
+                break;
+            case 2:
+                cout << "inverse normal" << endl;
+                break;
+            case 3:
+                cout << "by weight_asc" << endl;
+                break;
+            case 4:
+                cout << "by weight_desc" << endl;
+                break;
+            case 5:
+                cout << "by profit_asc" << endl;
+                break;
+            case 6:
+                cout << "by profit_desc" << endl;
+                break;
+            case 7:
+                cout << "by w/p" << endl;
+                break;
+            case 8:
+                cout << "by w/p inverse" << endl;
+                break;
+            default:
+                cout << "None" << endl;
+                break;
+        }
+
+
 
     if(n_start == 1)
         cout << "Starting experiments\nN\t|\tNumber of pareto optimal solutions\n";
