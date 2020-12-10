@@ -35,6 +35,28 @@ bool sort_inverse_of_difference_to_ray(pair<double, double> a, pair<double, doub
     return a.first / a.second < b.first / b.second;
 }
 
+bool sort_by_weight_div_profit(pair<double, double> a, pair<double, double > b) {
+    if(a.first < 1e-9)
+        return false;
+
+    if(b.first < 1e-9)
+        return true;
+
+    return a.second / a.first < b.second / b.first;
+}
+
+
+bool sort_by_weight_div_profit_inverse(pair<double, double> a, pair<double, double > b) {
+    if(a.first < 1e-9)
+        return true;
+
+    if(b.first < 1e-9)
+        return false;
+
+    return a.second / a.first > b.second / b.first;
+}
+
+
 bool sort_by_profit_asc(pair<double, double> a, pair<double, double > b) {
     return a.first < b.first;
 }
@@ -130,6 +152,14 @@ double experiment(
             case 6:
              //   cout << "Sort by profit_desc" << endl;
                 sort(v.begin(), v.end(), sort_by_profit_desc);
+                break;
+            case 7:
+//                cout << "Sort by w/p" << endl;
+                sort(v.begin(), v.end(), sort_by_weight_div_profit);
+                break;
+            case 8:
+//                cout << "Sort by w/p inverse" << endl;
+                sort(v.begin(), v.end(), sort_by_weight_div_profit_inverse);
                 break;
             default:
                 break;

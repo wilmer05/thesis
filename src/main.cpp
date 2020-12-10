@@ -41,6 +41,14 @@ int main(int argc, char* argv[]) {
         if(!strcmp(argv[i], "--sort-by-profit-desc")) {
             with_sort = 6;
         }
+
+        if(!strcmp(argv[i], "--sort-by-w-div-p")) {
+            with_sort = 7;
+        }
+
+        if(!strcmp(argv[i], "--sort-by-w-div-p-inverse")) {
+            with_sort = 8;
+        }
     } 
 
     int mode = atoi(argv[1]);
