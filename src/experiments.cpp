@@ -35,6 +35,22 @@ bool sort_inverse_of_difference_to_ray(pair<double, double> a, pair<double, doub
     return a.first / a.second < b.first / b.second;
 }
 
+bool sort_by_profit_asc(pair<double, double> a, pair<double, double > b) {
+    return a.first < b.first;
+}
+
+bool sort_by_profit_desc(pair<double, double> a, pair<double, double > b) {
+    return a.first > b.first;
+}
+
+bool sort_by_weight_asc(pair<double, double> a, pair<double, double > b) {
+    return a.second < b.second;
+}
+
+bool sort_by_weight_desc(pair<double, double> a, pair<double, double > b) {
+    return a.second > b.second;
+}
+
 double experiment(
         int n_items,
         int mode,
@@ -90,10 +106,35 @@ double experiment(
             v[i].second = weights[i];
         }
  
-        if(with_sort == 1)
-            sort(v.begin(), v.end(), sort_by_difference_to_ray);
-        if(with_sort == 2)
-            sort(v.begin(), v.end(), sort_inverse_of_difference_to_ray);
+        switch(with_sort) {
+            case 1:   
+        //        cout << "Sort normal" << endl;
+                sort(v.begin(), v.end(), sort_by_difference_to_ray);
+                break;
+            case 2:
+        //        cout << "Sort inverse normal" << endl;
+                sort(v.begin(), v.end(), sort_inverse_of_difference_to_ray);
+                break;
+            case 3:
+          //      cout << "Sort by weight_asc" << endl;
+                sort(v.begin(), v.end(), sort_by_weight_asc);
+                break;
+            case 4:
+            //    cout << "Sort by weight_desc" << endl;
+                sort(v.begin(), v.end(), sort_by_weight_desc);
+                break;
+            case 5:
+              //  cout << "Sort by profit_asc" << endl;
+                sort(v.begin(), v.end(), sort_by_profit_asc);
+                break;
+            case 6:
+             //   cout << "Sort by profit_desc" << endl;
+                sort(v.begin(), v.end(), sort_by_profit_desc);
+                break;
+            default:
+                break;
+
+        }
 
         weights.clear();
         profits.clear();
@@ -106,13 +147,16 @@ double experiment(
         } 
 
         int last = weights.size() - 1;
-        double eps = 1e-2;
-        vector<double> deviation = generate_random_uniform_val(2, -eps, eps);
-    	double ow = weights[last];
-    	double op = profits[last];
+        //double eps = 1e-2;
+        //if(v.size()) {
+        //    vector<double> deviation = generate_random_uniform_val(2, -eps, eps);
+    	//    double ow = weights[last];
+    	//    double op = profits[last];
+        //    //weights[last] = max(0.0,min(1.0, weights[last] + deviation[0]));
+        //    //profits[last] = max(0.0, min(1.0, profits[last] + deviation[1]));
+        //}
+        //            cout << v.size() << "\n";
 
-        //weights[last] = max(0.0,min(1.0, weights[last] + deviation[0]));
-        //profits[last] = max(0.0, min(1.0, profits[last] + deviation[1]));
 
         auto start = std::chrono::high_resolution_clock::now();
         vector<candidate> r = nemhauser_ullman(weights, profits, W, print_drops);
@@ -121,8 +165,8 @@ double experiment(
 
         r = nemhauser_ullman(weights, profits, W, false);
 
-        weights[last] = ow;
-        profits[last] = op;
+        //weights[last] = ow;
+        //profits[last] = op;
 
         double j = 0;
         for(int i=0; i < r.size(); i++) {
