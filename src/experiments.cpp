@@ -80,7 +80,8 @@ double experiment(
         bool read_from_stdin,
         bool print_means,
         bool print_drops,
-        int with_sort) {
+        int with_sort,
+        bool print_total_generated) {
     double mean = 0.0;
 
     double mean_max_weight_diff = 0.0;
@@ -97,6 +98,7 @@ double experiment(
 
     vector<double> counters(n_items, 0.0);
 
+    cout << "Round with n="<< n_items << " items" << endl;
     vector<double> weights;
     vector<double> profits;
     for(int i = 0; i < n_rounds; i++) {
@@ -189,11 +191,11 @@ double experiment(
 
 
         auto start = std::chrono::high_resolution_clock::now();
-        vector<candidate> r = nemhauser_ullman(weights, profits, W, print_drops);
+        vector<candidate> r = nemhauser_ullman(weights, profits, W, print_drops, print_total_generated);
         auto finish = std::chrono::high_resolution_clock::now(); 
         t_nemhauser_ullman += std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
 
-        r = nemhauser_ullman(weights, profits, W, false);
+        //r = nemhauser_ullman(weights, profits, W, false);
 
         //weights[last] = ow;
         //profits[last] = op;
@@ -251,17 +253,18 @@ double experiment(
 
     //t_core /= (double) n_rounds;
     t_nemhauser_ullman /= (double) n_rounds;
-    cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
-    //cout << "Time: \t" << t_core << endl;
 
-    if(print_means) {
-        cout <<"Means_for_N=" << n_items << " ";
-        cout << "mean_max_weight_diff=" << mean_max_weight_diff << " ";
-        cout << "mean_max_profit_diff=" << mean_max_profit_diff << " ";
-        cout << "mean_max_weight=" << mean_max_weight << " ";
-        cout << "mean_max_profit=" << mean_max_profit << " ";
-        cout << "mean_weight_diff=" << mean_weight_diff << endl;
-    }
+    //cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
+    ////cout << "Time: \t" << t_core << endl;
+
+    //if(print_means) {
+    //    cout <<"Means_for_N=" << n_items << " ";
+    //    cout << "mean_max_weight_diff=" << mean_max_weight_diff << " ";
+    //    cout << "mean_max_profit_diff=" << mean_max_profit_diff << " ";
+    //    cout << "mean_max_weight=" << mean_max_weight << " ";
+    //    cout << "mean_max_profit=" << mean_max_profit << " ";
+    //    cout << "mean_weight_diff=" << mean_weight_diff << endl;
+    //}
 //    cout << "Counters:\n" << endl;
     
 //    for(int i =0; i < counters.size();i++) {
@@ -272,7 +275,7 @@ double experiment(
     return mean;
 }
 
-void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin, bool print_means, bool print_drops, int with_sort) {
+void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin, bool print_means, bool print_drops, int with_sort, bool print_total_generated) {
         cout << "Sort mode: ";
         switch(with_sort) {
             case 1:   
@@ -312,7 +315,7 @@ void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, boo
     //cerr << "n-round " << n_rounds << endl;
     for(int i=n_start ; i < n_experiments + 1; i++) {
         double n_pareto_optimal_solutions = 
-                    experiment(i, mode, n_rounds, read_from_stdin, print_means, print_drops, with_sort);
+                    experiment(i, mode, n_rounds, read_from_stdin, print_means, print_drops, with_sort, print_total_generated);
 
         //cout << i << "\t|\t " << n_pareto_optimal_solutions << endl;
     }

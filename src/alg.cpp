@@ -22,15 +22,19 @@ void make_ticks(vector<candidate> &v) {
 		v[i].tick();
 }
 
-vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<double> &profits, double W, bool print_drops) {
+vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<double> &profits, double W, bool print_drops, bool print_total_generated) {
     vector<candidate> p;
     p.push_back(candidate(0,0));
     
     int n = weights.size();
     int drops = 0;
     int drop_count = 0;
+    int total_generated = 1;
+    int total_generated_all_included = 1;
+
     for(int i=0; i<n; i++) {
         int sz = p.size();
+        total_generated_all_included += sz;
         vector<candidate> q(sz);
         int last = 0;
         for(int j = 0 ; j < sz; j++ ) {
@@ -57,6 +61,7 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
                 tmp[k++] = p[cnt_p++];
             } else {
                 tmp[k++] = q[cnt_q++];
+                total_generated++;
             }
         }
         for(;cnt_p < p.size(); cnt_p++)
@@ -92,6 +97,10 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
     //cout << "bla" << endl;
     if(print_drops) {
         cout << "Total drops = " << drops << " Total sols=" << p.size()<< " Drop count=" << drop_count << endl;
+    }
+
+    if(print_total_generated) {
+        cout << "Total generated: " << total_generated << ", Total gen with all included " << total_generated_all_included << endl; 
     }
 
     assert(!p.size() || p[p.size() - 1].weight <= W);
@@ -155,7 +164,7 @@ double get_integral_solution(const vector<item> &core, double W) {
             ws.push_back(core[i].weight);
             ps.push_back(core[i].profit);
         }
-        vector<candidate> pos = nemhauser_ullman(ws ,ps, W, 0);
+        vector<candidate> pos = nemhauser_ullman(ws ,ps, W, 0, 0);
         if(pos.size()) return pos[pos.size() - 1].profit;
         return 0.0;
     }
