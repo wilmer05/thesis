@@ -12,7 +12,7 @@ print_included = sys.argv[1] == '--with-included'
 fig = plt.figure()
 plt.title('Experiment: Sorting the items')
 plt.xlabel('N')
-ylabel = 'Avg. total generated'
+ylabel = 'Avg. solutions on the pareto Curve'
 if print_included:
     ylabel = 'Avg. total generated with eliminated solutions'
 plt.ylabel(ylabel)
