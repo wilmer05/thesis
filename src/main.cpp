@@ -10,7 +10,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
 
     if(argc < 8) {
-        cout << "Usage: \n\t./run <mode> <n_rounds> <n_start> <n_experiments> <read_from_stdin_flag> <print_means> <print_drops> [--sort, --inverse-sort, --sort-by-weight-asc, --sort-by-weight-desc, --sort-by-profit-asc, --sort-by-profit-desc, --print-total-generated]\n\n\t" << 
+        cout << "Usage: \n\t./run <mode> <n_rounds> <n_start> <n_experiments> <read_from_stdin_flag> <print_means> <print_drops> [--sort, --inverse-sort, --sort-by-weight-asc, --sort-by-weight-desc, --sort-by-profit-asc, --sort-by-profit-desc, --print-total-generated, --approx-pareto-experiment]\n\n\t" << 
                 "modes\n\t\t1 : uniform distribution in [0,1]" <<
                 "\n\t\t2 : uniform distribution in [-1,1]" << endl;
         return 1;
@@ -18,6 +18,7 @@ int main(int argc, char* argv[]) {
 
     int with_sort = 0;
     bool print_total_generated = false;
+    bool approx_experiment = false;
     for(int i = 8 ; i < argc; i++) {
         if(!strcmp(argv[i], "--sort")) {
             with_sort = 1;
@@ -54,6 +55,11 @@ int main(int argc, char* argv[]) {
         if(!strcmp(argv[i], "--print-total-generated")) {
             print_total_generated = true;
         }
+        
+        
+        if(!strcmp(argv[i], "--approx-pareto-experiment")) {
+            approx_experiment = true;
+        }
     } 
 
     int mode = atoi(argv[1]);
@@ -63,6 +69,11 @@ int main(int argc, char* argv[]) {
     string read_from_stdin(argv[5]);
     string print_means(argv[6]);
     string print_drops(argv[7]);
-    run_experiments(mode, n_rounds, n_start, n_experiments, read_from_stdin == "1",  print_means == "1", print_drops=="1", with_sort, print_total_generated);
+
+    if(approx_experiment) {
+        run_approx_experiments(mode, n_rounds, n_start, n_experiments);
+    } else {
+        run_experiments(mode, n_rounds, n_start, n_experiments, read_from_stdin == "1",  print_means == "1", print_drops=="1", with_sort, print_total_generated);
+    }
     return 0;
 }

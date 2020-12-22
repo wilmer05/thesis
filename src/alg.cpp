@@ -69,8 +69,10 @@ vector<candidate> nemhauser_ullman(const vector<double> &weights, const vector<d
                 tmp[k++] = p[cnt_p];
 
         for(;cnt_q < q.size(); cnt_q++)
-            if(!k || (k > 0 && !tmp[k-1].dominates(q[cnt_q]))) 
+            if(!k || (k > 0 && !tmp[k-1].dominates(q[cnt_q]))) {
                 tmp[k++] = q[cnt_q];
+                total_generated++;
+            }
 
         tmp.resize(k);
         p = tmp; 
@@ -224,4 +226,10 @@ double core_algorithm(const vector<double> &weights, const vector<double> &profi
 
     assert(fractional_solution >= integral_solution);
     return integral_solution;
+}
+
+
+double kcenter(vector<candidate> &cs, int k) {
+
+
 }

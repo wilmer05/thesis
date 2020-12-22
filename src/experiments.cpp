@@ -321,3 +321,59 @@ void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, boo
     }
 }
 
+
+double approx_experiment(
+        int n_items,
+        int mode,
+        int n_rounds) {
+
+    double mean = 0.0;
+
+    double mean_max_weight_diff = 0.0;
+    double mean_max_profit_diff = 0.0;
+    double mean_max_weight = 0.0;
+    double mean_max_profit = 0.0;
+    double mean_weight_diff = 0.0;
+
+    if (n_rounds == 0)
+        return .0;
+
+    cout << "Round with n="<< n_items << " items" << endl;
+    vector<double> weights;
+    vector<double> profits;
+    for(int i = 0; i < n_rounds; i++) {
+
+        double W;
+
+        weights = generate_input(n_items, mode);
+        profits = generate_input(n_items, mode);
+        W = generate_random_uniform_val(1, 0, n_items)[0];
+
+        v.clear(); 
+        v = vector<pair<double, double> >(profits.size());
+        for(int i =0 ;i < weights.size(); i++) {
+            v[i].first = profits[i];
+            v[i].second = weights[i];
+        }
+ 
+        weights.clear();
+        profits.clear();
+
+        vector<candidate> r = nemhauser_ullman(weights, profits, W, 0, 0);
+
+    }
+
+    mean /= (double) n_rounds; 
+
+    return mean;
+}
+
+
+void run_approx_experiments(int mode, int n_rounds, int n_start, int n_experiments) {
+    for(int i=n_start ; i < n_experiments + 1; i++) {
+        double n_pareto_optimal_solutions = 
+                    approx_experiment(i, mode, n_rounds);
+    }
+}
+
+
