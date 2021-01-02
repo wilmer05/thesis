@@ -228,8 +228,63 @@ double core_algorithm(const vector<double> &weights, const vector<double> &profi
     return integral_solution;
 }
 
+double compute_epsilon(candidate &a, candidate &b) {
 
-double kcenter(vector<candidate> &cs, int k) {
+    double wa = a.weight;
+    double ca = a.profit;
+    double wb = b.weight;
+    double cb = b.profit;
 
+    if(wb < 1e-9) return 1e20; 
 
+    return max(1 - ca / cb, wa / wb - 1);
+}
+
+//vector<pair<double, pair<int, int> > > tmp;
+vector<bool> in_apprx_curve;
+vector<int> current_sol ;
+double approximate_pareto_curve(vector<candidate> &cs, int k) {
+    int sz = cs.size(); 
+    in_apprx_curve.resize(sz);
+    current_sol.resize(k);
+
+    for(int i =0 ; i < sz; i ++) {
+        in_apprx_curve[i] = false;
+    }
+
+    for(int i=0 ; i< k; i ++) current_sol[i] = -1;
+    current_sol[0] = 0;
+
+    in_apprx_curve[0] = true;
+
+    double ans = 1e12;
+
+    for(int i =0 ; i < k; i++) {
+        int worst_idx = -1;
+        double worst_eps = 0.0;
+
+        for(int j =0 ; j < sz; j++) {
+            if(in_apprx_curve[j]) continue;
+            
+            double current_eps = 1e22;
+            for(int idx = 0;idx < current_sol.size() && current_sol[idx] >= 0; idx++) {
+                int center_idx = current_sol[idx];
+                current_eps = min(current_eps, compute_epsilon(cs[center_idx], cs[j]));
+            }
+
+            if(current_eps > worst_eps || worst_idx == -1) {
+                worst_idx = j;
+                worst_eps = current_eps;
+            }
+        }
+
+        if(i == k - 1) {
+            ans = worst_eps;
+            break;
+        }
+
+        current_sol[i+1] = worst_idx;
+        in_apprx_curve[worst_idx] = true;
+    }
+    return ans;
 }

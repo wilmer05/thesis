@@ -62,4 +62,8 @@ double get_mask_weight(const vector<item> &, int);
 
 void make_ticks(vector<candidate> &);
 
+double compute_epsilon(candidate&, candidate&);
+
+double approximate_pareto_curve(vector<candidate> &, int);
+
 #endif
