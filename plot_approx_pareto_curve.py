@@ -36,8 +36,8 @@ try:
             if 'clusters' not in line:
                 continue   
 
-            cluster = int(line.split('|')[0].slpit()[0])
-            eps = float(line.split('|')[1].slpit()[-1])
+            cluster = int(line.split('|')[0].split()[0])
+            eps = float(line.split('|')[1].split()[-1])
             xs.append(cluster)
             ys.append(eps)
 

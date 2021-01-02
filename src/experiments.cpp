@@ -370,6 +370,7 @@ void run_approx_experiments(int mode, int n_rounds, int n_start, int n_experimen
             double eps = 
                     approx_experiment(i, mode, n_rounds, j);
             cout << j << " clusters | eps = " << eps << endl;
+            if(eps < 1e-6) break;
         }
     }
 }
