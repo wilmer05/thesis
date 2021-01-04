@@ -4,12 +4,12 @@ import numpy as np
 from math import log
 
 if len(sys.argv) < 3:
-    print("Usage: python plot <fname1> <fname2> ... <fname_n>")
+    print("Usage: python [MAX_N] <fname1> <fname2> ... <fname_n> <title>")
     sys.exit(1)
 
 fig = plt.figure()
-plt.title('Experiment: Approximate pareto curve. Algorithm: Highest epsilon first')
-plt.xlabel('K')
+plt.title(sys.argv[-1])
+plt.xlabel('# clusters')
 plt.ylabel('Avg. epsilon')
 
 cnt = 0
@@ -19,8 +19,14 @@ all_ys = []
 xs = []
 current_n = None
 
+start = 1
+max_n = 3000
+if sys.argv[1].isnumeric():
+    max_n = int(sys.argv[1])
+    start = 2
+
 try:
-    for fname in sys.argv[1:]:
+    for fname in sys.argv[start:-1]:
         fp = open(fname, "r")
 
         lines = fp.read()
@@ -40,6 +46,8 @@ try:
             eps = float(line.split('|')[1].split()[-1])
             xs.append(cluster)
             ys.append(eps)
+            if len(ys) >= max_n :
+                break
 
         plt.plot(
             xs,
@@ -53,6 +61,18 @@ except Exception as inst:
     print(str(inst))
     sys.exit(1)
 
+xs = []
+ys = []
+for i in range(1,max_n):
+    xs.append(i)
+    ys.append(1. / i)
+
+plt.plot(
+    xs,
+    ys,
+    linestyle='-',
+    label='1 / K')
+ 
 
 plt.legend()
 plt.show()
