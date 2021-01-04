@@ -369,7 +369,7 @@ void run_approx_experiments(int mode, int n_rounds, int n_start, int n_experimen
     for(int i=n_start ; i < n_experiments + 1; i++) {
         cout << "Nitems =  " << i << endl;
 
-        for(int j = 1 ; j < 5 * j  ; j++) {
+        for(int j = 1 ; j < 100  ; j++) {
             double eps = 
                     approx_experiment(i, mode, n_rounds, j, type);
             cout << j << " clusters | eps = " << eps << endl;
