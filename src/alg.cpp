@@ -288,3 +288,62 @@ double approximate_pareto_curve(vector<candidate> &cs, int k) {
     }
     return ans;
 }
+
+bool exists_set_with_k(vector<candidate> &cs, int k, double eps) {
+    k--;
+    int last_sol = 0;
+    int sz = cs.size();
+
+    while(k > 0 && last_sol < sz - 1) {
+        for(int i = last_sol + 1; i <= sz ; i++) {
+           double current_eps = 0;
+
+           for(int j = last_sol + 1; j < i ;  j++) {
+
+                double new_eps = 1e20 ;
+
+                if(i < sz)
+                    new_eps = cs[i].weight / cs[j].weight - 1;
+                
+                if(last_sol)
+                    new_eps = min(new_eps, 1 - cs[last_sol].profit / cs[j].profit);
+            
+                assert(new_eps >= 0);
+                current_eps = max(
+                    current_eps,
+                    new_eps);
+                //cout << i << " " << j << " " << k << endl;
+           }
+            
+           if(current_eps > eps) {
+                last_sol = i - 1;
+                i--;
+                k--;
+                break;
+           }
+           if(i >= sz )  {
+                k = 0;
+                break;
+           }
+        }
+    } 
+
+    return 1.0 - cs[last_sol].profit/ cs[sz - 1].profit <= eps;
+}
+
+double optimal_pareto_curve(vector<candidate> &cs, int k) {
+
+    double l, u;
+    l = 0.;
+    u = 1.0;
+
+    for(int i =0 ; i < 30; i++) {
+        double mid = (l + u) / 2;
+
+        if(exists_set_with_k(cs, k, mid)) 
+            u = mid;
+        else l = mid;
+    }
+
+    return l;
+}

@@ -326,7 +326,8 @@ double approx_experiment(
         int n_items,
         int mode,
         int n_rounds,
-        int clusters) {
+        int clusters,
+        int type) {
 
     double mean = 0.0;
 
@@ -351,9 +352,11 @@ double approx_experiment(
         W = generate_random_uniform_val(1, 0, n_items)[0];
 
         vector<candidate> r = nemhauser_ullman(weights, profits, W, 0, 0);
-        double eps = approximate_pareto_curve(r, min(clusters, (int)r.size()));
-        mean += eps;
+        double eps = (type == 1) ? 
+                approximate_pareto_curve(r, min(clusters, (int)r.size())) : 
+                optimal_pareto_curve(r, min(clusters, (int)r.size()));
 
+        mean += eps;
     }
 
     mean /= (double) n_rounds; 
@@ -362,13 +365,13 @@ double approx_experiment(
 }
 
 
-void run_approx_experiments(int mode, int n_rounds, int n_start, int n_experiments) {
+void run_approx_experiments(int mode, int n_rounds, int n_start, int n_experiments, int type) {
     for(int i=n_start ; i < n_experiments + 1; i++) {
         cout << "Nitems =  " << i << endl;
 
         for(int j = 1 ; j < 5 * j  ; j++) {
             double eps = 
-                    approx_experiment(i, mode, n_rounds, j);
+                    approx_experiment(i, mode, n_rounds, j, type);
             cout << j << " clusters | eps = " << eps << endl;
             if(eps < 1e-6) break;
         }

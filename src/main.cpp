@@ -10,7 +10,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
 
     if(argc < 8) {
-        cout << "Usage: \n\t./run <mode> <n_rounds> <n_start> <n_experiments> <read_from_stdin_flag> <print_means> <print_drops> [--sort, --inverse-sort, --sort-by-weight-asc, --sort-by-weight-desc, --sort-by-profit-asc, --sort-by-profit-desc, --print-total-generated, --approx-pareto-experiment]\n\n\t" << 
+        cout << "Usage: \n\t./run <mode> <n_rounds> <n_start> <n_experiments> <read_from_stdin_flag> <print_means> <print_drops> [--sort, --inverse-sort, --sort-by-weight-asc, --sort-by-weight-desc, --sort-by-profit-asc, --sort-by-profit-desc, --print-total-generated, --approx-pareto-experiment, --optimal-approx-experiment ]\n\n\t" << 
                 "modes\n\t\t1 : uniform distribution in [0,1]" <<
                 "\n\t\t2 : uniform distribution in [-1,1]" << endl;
         return 1;
@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
 
     int with_sort = 0;
     bool print_total_generated = false;
-    bool approx_experiment = false;
+    int approx_experiment = 0;
     for(int i = 8 ; i < argc; i++) {
         if(!strcmp(argv[i], "--sort")) {
             with_sort = 1;
@@ -58,7 +58,11 @@ int main(int argc, char* argv[]) {
         
         
         if(!strcmp(argv[i], "--approx-pareto-experiment")) {
-            approx_experiment = true;
+            approx_experiment = 1;
+        }
+
+        if(!strcmp(argv[i], "--optimal-approx-experiment")) {
+            approx_experiment = 2;
         }
     } 
 
@@ -71,7 +75,7 @@ int main(int argc, char* argv[]) {
     string print_drops(argv[7]);
 
     if(approx_experiment) {
-        run_approx_experiments(mode, n_rounds, n_start, n_experiments);
+        run_approx_experiments(mode, n_rounds, n_start, n_experiments, approx_experiment);
     } else {
         run_experiments(mode, n_rounds, n_start, n_experiments, read_from_stdin == "1",  print_means == "1", print_drops=="1", with_sort, print_total_generated);
     }

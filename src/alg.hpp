@@ -66,4 +66,8 @@ double compute_epsilon(candidate&, candidate&);
 
 double approximate_pareto_curve(vector<candidate> &, int);
 
+bool exists_set_with_k(vector<candidate> &, int, double);
+
+double optimal_pareto_curve(vector<candidate> &, int);
+
 #endif
