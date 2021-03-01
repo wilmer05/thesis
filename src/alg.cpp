@@ -347,3 +347,21 @@ double optimal_pareto_curve(vector<candidate> &cs, int k) {
 
     return l;
 }
+
+double compute_epsilon_from(vector<candidate> &p_curve, vector<candidate> &cs) {
+    double eps = 0;
+
+    int i = 0, j = 0;
+
+    while(i < p_curve.size() && j < cs.size()) {
+        while(p_curve[i].weight >= cs[j].weight && j + 1 < cs.size()) j++;
+        
+        if(i) { 
+            eps = max(eps, min(cs[j].weight / p_curve[i].weight - 1, 1 - cs[j-1].profit / p_curve[i].profit));
+        }
+        i++;
+    }
+
+    return eps;
+}
+

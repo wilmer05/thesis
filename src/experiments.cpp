@@ -81,7 +81,9 @@ double experiment(
         bool print_means,
         bool print_drops,
         int with_sort,
-        bool print_total_generated) {
+        bool print_total_generated,
+        bool print_prob_dist) {
+
     double mean = 0.0;
 
     double mean_max_weight_diff = 0.0;
@@ -101,6 +103,8 @@ double experiment(
     cout << "Round with n="<< n_items << " items" << endl;
     vector<double> weights;
     vector<double> profits;
+    vector<long long> range_cnt = vector<long long>(n_items, 0LL);
+
     for(int i = 0; i < n_rounds; i++) {
 
         double W;
@@ -229,6 +233,9 @@ double experiment(
             max_dist_profit = max(max_dist_profit, r[i+1].profit - r[i].profit);
             max_dist_weight = max(max_dist_weight, r[i+1].weight - r[i].weight);
             local_weight_diff += r[i+1].profit - r[i].profit;
+
+            int idx = (int) ((r[i+1].weight - r[i].weight) * n_items);
+            range_cnt[idx]++;
         }
         local_weight_diff /= (r.size() - 1);
         mean_weight_diff += local_weight_diff;
@@ -257,6 +264,13 @@ double experiment(
     //cout << "Time: \t" << t_nemhauser_ullman << "\t|\t" << t_core << endl;
     ////cout << "Time: \t" << t_core << endl;
 
+    if(print_prob_dist) {
+        cout << "Prob dist\n";
+        for(int i =0 ; i < n_items; i++) {
+            cout << range_cnt[i] << " ";
+        }
+    }
+
     //if(print_means) {
     //    cout <<"Means_for_N=" << n_items << " ";
     //    cout << "mean_max_weight_diff=" << mean_max_weight_diff << " ";
@@ -275,7 +289,7 @@ double experiment(
     return mean;
 }
 
-void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin, bool print_means, bool print_drops, int with_sort, bool print_total_generated) {
+void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, bool read_from_stdin, bool print_means, bool print_drops, int with_sort, bool print_total_generated, bool print_prob_dist) {
         cout << "Sort mode: ";
         switch(with_sort) {
             case 1:   
@@ -315,7 +329,7 @@ void run_experiments(int mode, int n_rounds, int n_start, int n_experiments, boo
     //cerr << "n-round " << n_rounds << endl;
     for(int i=n_start ; i < n_experiments + 1; i++) {
         double n_pareto_optimal_solutions = 
-                    experiment(i, mode, n_rounds, read_from_stdin, print_means, print_drops, with_sort, print_total_generated);
+                    experiment(i, mode, n_rounds, read_from_stdin, print_means, print_drops, with_sort, print_total_generated, print_prob_dist);
 
         //cout << i << "\t|\t " << n_pareto_optimal_solutions << endl;
     }
@@ -337,6 +351,8 @@ double approx_experiment(
     double mean_max_profit = 0.0;
     double mean_weight_diff = 0.0;
 
+    double mean_eps_diff = 0.0;
+
     if (n_rounds == 0)
         return .0;
 
@@ -351,15 +367,49 @@ double approx_experiment(
         profits = generate_input(n_items, mode);
         W = generate_random_uniform_val(1, 0, n_items)[0];
 
+        if(type == 3) W = n_items;
         vector<candidate> r = nemhauser_ullman(weights, profits, W, 0, 0);
         double eps = (type == 1) ? 
                 approximate_pareto_curve(r, min(clusters, (int)r.size())) : 
                 optimal_pareto_curve(r, min(clusters, (int)r.size()));
 
+        if(type == 3) {
+
+            vector<candidate> greedy_sol;
+            v = vector<pair<double, double> >(profits.size());
+            for(int i =0 ;i < weights.size(); i++) {
+                v[i].first = profits[i];
+                v[i].second = weights[i];
+            }
+
+            sort(v.begin(), v.end(), sort_by_difference_to_ray);
+            candidate c0;
+            c0.weight = 0 ; c0.profit = 0;
+            greedy_sol.push_back(c0);
+
+            for(int i =0 ; i < v.size(); i++) {
+                candidate ca;
+                ca.weight = greedy_sol[greedy_sol.size() - 1].weight + v[i].second;
+                ca.profit = greedy_sol[greedy_sol.size() - 1].profit + v[i].first;
+                greedy_sol.push_back(ca);
+            }
+
+            double diff_eps = compute_epsilon_from(r, greedy_sol);
+            assert(diff_eps >= 0);
+
+            mean_eps_diff += diff_eps;
+
+        }
+
         mean += eps;
+        
     }
 
     mean /= (double) n_rounds; 
+    mean_eps_diff /= (double) n_rounds;
+
+    if (type == 3)
+        cout << "Mean eps greedy = " << mean_eps_diff << endl;
 
     return mean;
 }
@@ -369,7 +419,11 @@ void run_approx_experiments(int mode, int n_rounds, int n_start, int n_experimen
     for(int i=n_start ; i < n_experiments + 1; i++) {
         cout << "Nitems =  " << i << endl;
 
-        for(int j = 1 ; j < 100  ; j++) {
+        int be = 1 , end = 100;
+        if (type == 3) 
+            be = n_start+1, end = n_start + 2;
+
+        for(int j = be ; j < end  ; j++) {
             double eps = 
                     approx_experiment(i, mode, n_rounds, j, type);
             cout << j << " clusters | eps = " << eps << endl;

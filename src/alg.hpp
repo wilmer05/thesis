@@ -70,4 +70,6 @@ bool exists_set_with_k(vector<candidate> &, int, double);
 
 double optimal_pareto_curve(vector<candidate> &, int);
 
+double compute_epsilon_from(vector<candidate> &, vector<candidate> &);
+
 #endif
