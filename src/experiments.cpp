@@ -352,6 +352,8 @@ double approx_experiment(
     double mean_weight_diff = 0.0;
 
     double mean_eps_diff = 0.0;
+    double mean_first_sol_weight = 0.0;
+    double mean_first_sol_profit = 0.0;
 
     if (n_rounds == 0)
         return .0;
@@ -383,6 +385,10 @@ double approx_experiment(
             }
 
             sort(v.begin(), v.end(), sort_by_difference_to_ray);
+
+            mean_first_sol_weight += v[0].second;
+            mean_first_sol_profit += v[0].first;
+
             candidate c0;
             c0.weight = 0 ; c0.profit = 0;
             greedy_sol.push_back(c0);
@@ -408,8 +414,14 @@ double approx_experiment(
     mean /= (double) n_rounds; 
     mean_eps_diff /= (double) n_rounds;
 
-    if (type == 3)
+    mean_first_sol_weight /= (double) n_rounds;
+    mean_first_sol_profit /= (double) n_rounds;
+
+    if (type == 3) {
         cout << "Mean eps greedy = " << mean_eps_diff << endl;
+        cout << "Mean first profit = " << mean_first_sol_profit << endl;
+        cout << "Mean first weight = " << mean_first_sol_weight << endl;
+    }
 
     return mean;
 }
