@@ -8,9 +8,9 @@ if len(sys.argv) < 2:
     sys.exit(1)
 
 fig = plt.figure()
-plt.title('Avg. weight first and second solution')
+plt.title('Avg. profit first and second solution')
 plt.xlabel('N')
-plt.ylabel('Avg. first and second weight')
+plt.ylabel('Avg. first and second profit')
 
 cnt = 0
 total = 0
@@ -35,7 +35,7 @@ try:
         print(fname)
 
         for line in lines:
-            if 'Mean first weight' not in line and 'Nitems' not in line and not 'Mean second weight' in line:
+            if 'Mean first profit' not in line and 'Nitems' not in line and not 'Mean second profit' in line:
                 continue   
 
             if 'Nitems' in line:
@@ -57,13 +57,13 @@ try:
             xs,
             ys,
             linestyle='-',
-            label='Mean first weight')
+            label='Mean first profit')
 
         plt.plot(
             xs,
             ys2,
             linestyle='-',
-            label='Mean second weight')
+            label='Mean second profit')
                 
         fp.close()
 except Exception as inst:

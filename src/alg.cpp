@@ -356,9 +356,10 @@ double compute_epsilon_from(vector<candidate> &p_curve, vector<candidate> &cs) {
     while(i < p_curve.size() && j < cs.size()) {
         while(p_curve[i].weight >= cs[j].weight && j + 1 < cs.size()) j++;
 
-        if( j >= 2 ) break;
+        //if( j >= 2 ) break;
         
-        if(j == 1) { 
+        //if(j >= 1) { 
+        if (i) {
             eps = max(eps, min(cs[j].weight / p_curve[i].weight - 1, 1 - cs[j-1].profit / p_curve[i].profit));
         }
         i++;
