@@ -56,6 +56,13 @@ try:
             ys,
             linestyle='-',
             label=fname)
+
+        total = 0
+        for a in ys:
+            total += a
+
+        total/= len(ys)
+        print(total)
                 
         fp.close()
 except Exception as inst:
