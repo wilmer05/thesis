@@ -1,0 +1,2397 @@
+Nitems =  100
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 3
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Mean eps greedy = 0.316694
+Mean first profit = 0.642334
+Mean first weight = 0.0130272
+Mean second profit = 0.72439
+Mean second weight = 0.0310399
+101 clusters | eps = 0.0179687
+Nitems =  101
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 4
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 4
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Mean eps greedy = 0.367952
+Mean first profit = 0.639502
+Mean first weight = 0.0135501
+Mean second profit = 0.64922
+Mean second weight = 0.0273594
+101 clusters | eps = 0.0183105
+Nitems =  102
+Best range index: 4
+Best range index: 3
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 6
+Best range index: 1
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 4
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 4
+Best range index: 2
+Best range index: 0
+Mean eps greedy = 0.383997
+Mean first profit = 0.684084
+Mean first weight = 0.014003
+Mean second profit = 0.687474
+Mean second weight = 0.0264418
+101 clusters | eps = 0.018042
+Nitems =  103
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 6
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Mean eps greedy = 0.375181
+Mean first profit = 0.625024
+Mean first weight = 0.0138184
+Mean second profit = 0.670681
+Mean second weight = 0.0322187
+101 clusters | eps = 0.0184814
+Nitems =  104
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 6
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 2
+Best range index: 4
+Best range index: 0
+Best range index: 4
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 2
+Best range index: 4
+Mean eps greedy = 0.322354
+Mean first profit = 0.690415
+Mean first weight = 0.0137798
+Mean second profit = 0.602612
+Mean second weight = 0.0227832
+101 clusters | eps = 0.0181885
+Nitems =  105
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 3
+Best range index: 3
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 7
+Best range index: 0
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 5
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Mean eps greedy = 0.30888
+Mean first profit = 0.659778
+Mean first weight = 0.00767459
+Mean second profit = 0.651206
+Mean second weight = 0.0227016
+101 clusters | eps = 0.0186523
+Nitems =  106
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 4
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Mean eps greedy = 0.36208
+Mean first profit = 0.688174
+Mean first weight = 0.0104568
+Mean second profit = 0.678344
+Mean second weight = 0.0198307
+101 clusters | eps = 0.0182373
+Nitems =  107
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 6
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Mean eps greedy = 0.310877
+Mean first profit = 0.640819
+Mean first weight = 0.00845923
+Mean second profit = 0.707473
+Mean second weight = 0.0215814
+101 clusters | eps = 0.0181885
+Nitems =  108
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 5
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 7
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 4
+Best range index: 7
+Mean eps greedy = 0.357117
+Mean first profit = 0.68429
+Mean first weight = 0.0140566
+Mean second profit = 0.623758
+Mean second weight = 0.0242986
+101 clusters | eps = 0.0186523
+Nitems =  109
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 4
+Best range index: 3
+Best range index: 1
+Best range index: 4
+Best range index: 0
+Best range index: 4
+Best range index: 7
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 7
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 4
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Mean eps greedy = 0.288854
+Mean first profit = 0.722218
+Mean first weight = 0.0137458
+Mean second profit = 0.652898
+Mean second weight = 0.0228941
+101 clusters | eps = 0.0182617
+Nitems =  110
+Best range index: 2
+Best range index: 4
+Best range index: 4
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 6
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 0
+Best range index: 4
+Best range index: 4
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Mean eps greedy = 0.446015
+Mean first profit = 0.6916
+Mean first weight = 0.0141605
+Mean second profit = 0.70809
+Mean second weight = 0.0241956
+101 clusters | eps = 0.0184814
+Nitems =  111
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 3
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 4
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 4
+Best range index: 0
+Best range index: 2
+Best range index: 6
+Best range index: 2
+Best range index: 4
+Mean eps greedy = 0.352214
+Mean first profit = 0.735966
+Mean first weight = 0.0126361
+Mean second profit = 0.692988
+Mean second weight = 0.0300895
+101 clusters | eps = 0.0187988
+Nitems =  112
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Mean eps greedy = 0.396946
+Mean first profit = 0.588674
+Mean first weight = 0.0119282
+Mean second profit = 0.740403
+Mean second weight = 0.0268928
+101 clusters | eps = 0.0191162
+Nitems =  113
+Best range index: 1
+Best range index: 2
+Best range index: 6
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 2
+Best range index: 0
+Best range index: 4
+Best range index: 1
+Best range index: 0
+Best range index: 5
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Mean eps greedy = 0.383064
+Mean first profit = 0.687002
+Mean first weight = 0.0107666
+Mean second profit = 0.705435
+Mean second weight = 0.0216535
+101 clusters | eps = 0.0185547
+Nitems =  114
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 3
+Best range index: 2
+Best range index: 2
+Best range index: 6
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 5
+Best range index: 1
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 8
+Best range index: 5
+Best range index: 0
+Best range index: 6
+Best range index: 4
+Mean eps greedy = 0.36996
+Mean first profit = 0.689171
+Mean first weight = 0.0112491
+Mean second profit = 0.743667
+Mean second weight = 0.0267319
+101 clusters | eps = 0.0188477
+Nitems =  115
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 6
+Best range index: 0
+Best range index: 5
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 4
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Mean eps greedy = 0.39924
+Mean first profit = 0.676298
+Mean first weight = 0.0116093
+Mean second profit = 0.692102
+Mean second weight = 0.0224266
+101 clusters | eps = 0.019165
+Nitems =  116
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 4
+Best range index: 5
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Mean eps greedy = 0.370078
+Mean first profit = 0.577273
+Mean first weight = 0.00794013
+Mean second profit = 0.706283
+Mean second weight = 0.0280496
+101 clusters | eps = 0.0196777
+Nitems =  117
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Mean eps greedy = 0.325559
+Mean first profit = 0.727559
+Mean first weight = 0.0100945
+Mean second profit = 0.648146
+Mean second weight = 0.0186326
+101 clusters | eps = 0.0187256
+Nitems =  118
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 4
+Best range index: 1
+Best range index: 4
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 4
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 4
+Best range index: 3
+Best range index: 2
+Mean eps greedy = 0.349793
+Mean first profit = 0.623316
+Mean first weight = 0.00975869
+Mean second profit = 0.661494
+Mean second weight = 0.0195505
+101 clusters | eps = 0.0193848
+Nitems =  119
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 7
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 5
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 9
+Best range index: 3
+Mean eps greedy = 0.372459
+Mean first profit = 0.690592
+Mean first weight = 0.0128393
+Mean second profit = 0.68968
+Mean second weight = 0.0245733
+101 clusters | eps = 0.0193848
+Nitems =  120
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 4
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 4
+Mean eps greedy = 0.335672
+Mean first profit = 0.589314
+Mean first weight = 0.00910836
+Mean second profit = 0.702119
+Mean second weight = 0.0251862
+101 clusters | eps = 0.0198486
+Nitems =  121
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 6
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 4
+Best range index: 4
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 4
+Best range index: 2
+Best range index: 6
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 2
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Mean eps greedy = 0.287653
+Mean first profit = 0.649024
+Mean first weight = 0.0130634
+Mean second profit = 0.690069
+Mean second weight = 0.0253984
+101 clusters | eps = 0.0196777
+Nitems =  122
+Best range index: 6
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 8
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Mean eps greedy = 0.408368
+Mean first profit = 0.643217
+Mean first weight = 0.0115046
+Mean second profit = 0.636707
+Mean second weight = 0.0224158
+101 clusters | eps = 0.0201416
+Nitems =  123
+Best range index: 0
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 6
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 6
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Mean eps greedy = 0.384754
+Mean first profit = 0.752662
+Mean first weight = 0.013991
+Mean second profit = 0.687025
+Mean second weight = 0.0259319
+101 clusters | eps = 0.0192383
+Nitems =  124
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 5
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 7
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 6
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 3
+Best range index: 5
+Mean eps greedy = 0.362869
+Mean first profit = 0.676935
+Mean first weight = 0.00935222
+Mean second profit = 0.720224
+Mean second weight = 0.0196216
+101 clusters | eps = 0.0192871
+Nitems =  125
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Mean eps greedy = 0.365956
+Mean first profit = 0.641155
+Mean first weight = 0.00866075
+Mean second profit = 0.64948
+Mean second weight = 0.0237447
+101 clusters | eps = 0.0201416
+Nitems =  126
+Best range index: 1
+Best range index: 5
+Best range index: 3
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 4
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Mean eps greedy = 0.349169
+Mean first profit = 0.608078
+Mean first weight = 0.00946163
+Mean second profit = 0.663264
+Mean second weight = 0.0231451
+101 clusters | eps = 0.019751
+Nitems =  127
+Best range index: 4
+Best range index: 3
+Best range index: 4
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 5
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 2
+Mean eps greedy = 0.358488
+Mean first profit = 0.629894
+Mean first weight = 0.00790646
+Mean second profit = 0.661294
+Mean second weight = 0.0199972
+101 clusters | eps = 0.0195312
+Nitems =  128
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 8
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Mean eps greedy = 0.332914
+Mean first profit = 0.675285
+Mean first weight = 0.0117615
+Mean second profit = 0.638944
+Mean second weight = 0.0255951
+101 clusters | eps = 0.0201416
+Nitems =  129
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 9
+Best range index: 2
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 10
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 4
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 3
+Best range index: 4
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 9
+Mean eps greedy = 0.291346
+Mean first profit = 0.648344
+Mean first weight = 0.011064
+Mean second profit = 0.716491
+Mean second weight = 0.0224805
+101 clusters | eps = 0.0196533
+Nitems =  130
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 7
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 6
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 4
+Best range index: 2
+Best range index: 3
+Mean eps greedy = 0.421593
+Mean first profit = 0.643255
+Mean first weight = 0.0081222
+Mean second profit = 0.660258
+Mean second weight = 0.0190697
+101 clusters | eps = 0.0201904
+Nitems =  131
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Mean eps greedy = 0.441488
+Mean first profit = 0.651074
+Mean first weight = 0.0122366
+Mean second profit = 0.650479
+Mean second weight = 0.0195666
+101 clusters | eps = 0.0203857
+Nitems =  132
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 3
+Best range index: 1
+Best range index: 4
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 5
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Mean eps greedy = 0.355409
+Mean first profit = 0.643556
+Mean first weight = 0.00882966
+Mean second profit = 0.67281
+Mean second weight = 0.0196353
+101 clusters | eps = 0.0200195
+Nitems =  133
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 4
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Mean eps greedy = 0.409652
+Mean first profit = 0.69816
+Mean first weight = 0.0124068
+Mean second profit = 0.70543
+Mean second weight = 0.0224659
+101 clusters | eps = 0.020166
+Nitems =  134
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 5
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 6
+Best range index: 1
+Best range index: 5
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 6
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Mean eps greedy = 0.330934
+Mean first profit = 0.605949
+Mean first weight = 0.00788597
+Mean second profit = 0.587481
+Mean second weight = 0.0143865
+101 clusters | eps = 0.0201904
+Nitems =  135
+Best range index: 3
+Best range index: 3
+Best range index: 3
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 3
+Best range index: 3
+Best range index: 2
+Best range index: 6
+Best range index: 0
+Best range index: 3
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 3
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Mean eps greedy = 0.322202
+Mean first profit = 0.707493
+Mean first weight = 0.00907504
+Mean second profit = 0.64726
+Mean second weight = 0.0166806
+101 clusters | eps = 0.0202637
+Nitems =  136
+Best range index: 4
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 5
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 6
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 4
+Best range index: 0
+Best range index: 6
+Best range index: 4
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Mean eps greedy = 0.373305
+Mean first profit = 0.630972
+Mean first weight = 0.00977767
+Mean second profit = 0.668426
+Mean second weight = 0.0194932
+101 clusters | eps = 0.0208008
+Nitems =  137
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 4
+Best range index: 4
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 3
+Best range index: 8
+Mean eps greedy = 0.346673
+Mean first profit = 0.671481
+Mean first weight = 0.00926783
+Mean second profit = 0.72293
+Mean second weight = 0.0193159
+101 clusters | eps = 0.0204102
+Nitems =  138
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 4
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 7
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 5
+Best range index: 5
+Best range index: 1
+Mean eps greedy = 0.385366
+Mean first profit = 0.65336
+Mean first weight = 0.00984704
+Mean second profit = 0.632458
+Mean second weight = 0.0191729
+101 clusters | eps = 0.0205811
+Nitems =  139
+Best range index: 3
+Best range index: 3
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 0
+Best range index: 2
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 4
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 4
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 2
+Best range index: 4
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Mean eps greedy = 0.327931
+Mean first profit = 0.717237
+Mean first weight = 0.00682745
+Mean second profit = 0.645498
+Mean second weight = 0.0145215
+101 clusters | eps = 0.0205078
+Nitems =  140
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 3
+Best range index: 1
+Best range index: 4
+Best range index: 3
+Best range index: 0
+Best range index: 4
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 6
+Best range index: 4
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Mean eps greedy = 0.303082
+Mean first profit = 0.633994
+Mean first weight = 0.00717997
+Mean second profit = 0.665036
+Mean second weight = 0.0167545
+101 clusters | eps = 0.0206055
+Nitems =  141
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 2
+Best range index: 4
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 6
+Best range index: 2
+Best range index: 3
+Best range index: 2
+Best range index: 4
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 4
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Mean eps greedy = 0.345791
+Mean first profit = 0.651603
+Mean first weight = 0.0100315
+Mean second profit = 0.67919
+Mean second weight = 0.0196487
+101 clusters | eps = 0.0207031
+Nitems =  142
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 7
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 4
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Mean eps greedy = 0.336494
+Mean first profit = 0.652902
+Mean first weight = 0.00745734
+Mean second profit = 0.693592
+Mean second weight = 0.0181296
+101 clusters | eps = 0.0208496
+Nitems =  143
+Best range index: 2
+Best range index: 7
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 5
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 4
+Best range index: 2
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Mean eps greedy = 0.367238
+Mean first profit = 0.714356
+Mean first weight = 0.00826692
+Mean second profit = 0.631915
+Mean second weight = 0.0138168
+101 clusters | eps = 0.0208984
+Nitems =  144
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 4
+Best range index: 1
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 4
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 4
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Mean eps greedy = 0.412832
+Mean first profit = 0.621264
+Mean first weight = 0.00763602
+Mean second profit = 0.628418
+Mean second weight = 0.0161439
+101 clusters | eps = 0.0212891
+Nitems =  145
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 4
+Best range index: 0
+Best range index: 0
+Best range index: 4
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 5
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Mean eps greedy = 0.423844
+Mean first profit = 0.679036
+Mean first weight = 0.0112091
+Mean second profit = 0.66487
+Mean second weight = 0.0195391
+101 clusters | eps = 0.0212158
+Nitems =  146
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 5
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Mean eps greedy = 0.394631
+Mean first profit = 0.611158
+Mean first weight = 0.00931627
+Mean second profit = 0.626638
+Mean second weight = 0.0187877
+101 clusters | eps = 0.0214111
+Nitems =  147
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 2
+Best range index: 4
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 3
+Best range index: 3
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 0
+Best range index: 3
+Best range index: 2
+Best range index: 2
+Best range index: 1
+Best range index: 3
+Best range index: 0
+Best range index: 0
+Best range index: 6
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Best range index: 0
+Mean eps greedy = 0.410422
+Mean first profit = 0.60824
+Mean first weight = 0.00711302
+Mean second profit = 0.563741
+Mean second weight = 0.0142671
+101 clusters | eps = 0.02146
+Nitems =  148
+Best range index: 5
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 3
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Best range index: 4
+Best range index: 3
+Best range index: 0
+Best range index: 1
+Best range index: 5
+Best range index: 0
+Best range index: 2
+Best range index: 3
+Best range index: 3
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 1
+Best range index: 4
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 4
+Best range index: 2
+Best range index: 3
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Mean eps greedy = 0.322243
+Mean first profit = 0.69626
+Mean first weight = 0.00949689
+Mean second profit = 0.668695
+Mean second weight = 0.0209277
+101 clusters | eps = 0.0206299
+Nitems =  149
+Best range index: 3
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 2
+Best range index: 2
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 6
+Best range index: 2
+Best range index: 6
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 5
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 3
+Best range index: 4
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 3
+Best range index: 1
+Mean eps greedy = 0.366658
+Mean first profit = 0.756321
+Mean first weight = 0.0102707
+Mean second profit = 0.63241
+Mean second weight = 0.0163225
+101 clusters | eps = 0.0210205
+Nitems =  150
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 2
+Best range index: 0
+Best range index: 7
+Best range index: 1
+Best range index: 2
+Best range index: 2
+Best range index: 3
+Best range index: 0
+Best range index: 4
+Best range index: 2
+Best range index: 1
+Best range index: 6
+Best range index: 6
+Best range index: 2
+Best range index: 6
+Best range index: 0
+Best range index: 4
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 3
+Best range index: 1
+Best range index: 4
+Best range index: 2
+Best range index: 0
+Best range index: 1
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Best range index: 1
+Best range index: 2
+Best range index: 1
+Best range index: 0
+Best range index: 0
+Mean eps greedy = 0.432083
+Mean first profit = 0.625542
+Mean first weight = 0.0088927
+Mean second profit = 0.663827
+Mean second weight = 0.0184648
+101 clusters | eps = 0.0215088

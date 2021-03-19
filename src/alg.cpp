@@ -352,6 +352,7 @@ double compute_epsilon_from(vector<candidate> &p_curve, vector<candidate> &cs) {
     double eps = 0;
 
     int i = 0, j = 0;
+    int best_range_index = 0;
 
     while(i < p_curve.size() && j < cs.size()) {
         while(p_curve[i].weight >= cs[j].weight && j + 1 < cs.size()) j++;
@@ -359,11 +360,18 @@ double compute_epsilon_from(vector<candidate> &p_curve, vector<candidate> &cs) {
         //if( j >= 2 ) break;
         
         //if(j >= 1) { 
+        double tmp_eps = eps;
         if (i) {
             eps = max(eps, min(cs[j].weight / p_curve[i].weight - 1, 1 - cs[j-1].profit / p_curve[i].profit));
+
+            if(tmp_eps != eps) {
+                best_range_index = j-1;
+            }
         }
         i++;
     }
+
+    cout << "Best range index: " << best_range_index << endl;
 
     return eps;
 }
